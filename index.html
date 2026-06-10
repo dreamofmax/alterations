@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier — Alterations Studio, London</title>
+  <title>Altbes — Alteration & Bespoke, London</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --cream:   #F2EFE9;
       --warm-white: #FAF9F6;
@@ -19,9 +19,9 @@
       --gold:    #B09A78;
       --dark:    #252320;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--warm-white);
@@ -30,7 +30,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
+ 
     /* ─── NAV ─── */
     nav {
       position: fixed;
@@ -44,7 +44,7 @@
       background: rgba(26,25,23,0.96);
       backdrop-filter: blur(8px);
     }
-
+ 
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
@@ -54,7 +54,7 @@
       text-decoration: none;
       text-transform: uppercase;
     }
-
+ 
     .nav-logo span {
       font-style: italic;
       font-weight: 300;
@@ -66,13 +66,13 @@
       letter-spacing: 0.18em;
       margin-top: 1px;
     }
-
+ 
     .nav-links {
       display: flex;
       gap: 36px;
       list-style: none;
     }
-
+ 
     .nav-links a {
       font-size: 12px;
       font-weight: 400;
@@ -82,9 +82,9 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     .nav-links a:hover { color: var(--cream); }
-
+ 
     .nav-cta {
       background: transparent;
       border: 1px solid var(--cream);
@@ -99,12 +99,12 @@
       text-decoration: none;
       transition: background 0.2s, color 0.2s;
     }
-
+ 
     .nav-cta:hover {
       background: var(--cream);
       color: var(--ink);
     }
-
+ 
     /* ─── HERO ─── */
     .hero {
       height: 100vh;
@@ -116,7 +116,7 @@
       overflow: hidden;
       background: var(--dark);
     }
-
+ 
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -124,12 +124,12 @@
         linear-gradient(to right, rgba(26,25,23,0.72) 40%, rgba(26,25,23,0.18) 100%),
         url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
     }
-
+ 
     .hero-content {
       position: relative;
       max-width: 560px;
     }
-
+ 
     .hero-eyebrow {
       font-size: 10px;
       letter-spacing: 0.22em;
@@ -137,7 +137,7 @@
       color: var(--gold);
       margin-bottom: 20px;
     }
-
+ 
     .hero-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(52px, 6vw, 82px);
@@ -146,12 +146,12 @@
       color: var(--cream);
       margin-bottom: 28px;
     }
-
+ 
     .hero-headline em {
       font-style: italic;
       font-weight: 300;
     }
-
+ 
     .hero-sub {
       font-size: 13px;
       color: rgba(242,239,233,0.65);
@@ -161,13 +161,13 @@
       margin-bottom: 40px;
       letter-spacing: 0.01em;
     }
-
+ 
     .hero-actions {
       display: flex;
       gap: 16px;
       align-items: center;
     }
-
+ 
     .btn-primary {
       background: var(--cream);
       color: var(--ink);
@@ -183,12 +183,12 @@
       display: inline-block;
       transition: background 0.2s, color 0.2s;
     }
-
+ 
     .btn-primary:hover {
       background: var(--gold);
       color: white;
     }
-
+ 
     .btn-ghost {
       color: rgba(242,239,233,0.7);
       font-size: 11px;
@@ -199,12 +199,12 @@
       padding-bottom: 2px;
       transition: color 0.2s, border-color 0.2s;
     }
-
+ 
     .btn-ghost:hover {
       color: var(--cream);
       border-color: var(--cream);
     }
-
+ 
     /* ─── AS SEEN IN ─── */
     .press-bar {
       background: var(--ink);
@@ -214,7 +214,7 @@
       gap: 48px;
       overflow: hidden;
     }
-
+ 
     .press-label {
       font-size: 9px;
       letter-spacing: 0.22em;
@@ -223,21 +223,21 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-
+ 
     .press-divider {
       width: 1px;
       height: 24px;
       background: rgba(255,255,255,0.12);
       flex-shrink: 0;
     }
-
+ 
     .press-logos {
       display: flex;
       align-items: center;
       gap: 48px;
       flex-wrap: wrap;
     }
-
+ 
     .press-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 18px;
@@ -249,9 +249,9 @@
       /* Replace with <img> tags for real logos */
       white-space: nowrap;
     }
-
+ 
     .press-logo:hover { color: rgba(242,239,233,0.85); }
-
+ 
     /* ─── INTRO ─── */
     .intro {
       padding: 120px 72px;
@@ -261,9 +261,9 @@
       align-items: center;
       background: var(--warm-white);
     }
-
+ 
     .intro-text {}
-
+ 
     .section-eyebrow {
       font-size: 9px;
       letter-spacing: 0.24em;
@@ -271,7 +271,7 @@
       color: var(--gold);
       margin-bottom: 20px;
     }
-
+ 
     .intro-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 3.5vw, 52px);
@@ -280,11 +280,11 @@
       color: var(--ink);
       margin-bottom: 28px;
     }
-
+ 
     .intro-headline em {
       font-style: italic;
     }
-
+ 
     .intro-body {
       font-size: 14px;
       color: var(--stone);
@@ -293,14 +293,14 @@
       max-width: 420px;
       margin-bottom: 40px;
     }
-
+ 
     .intro-detail {
       display: flex;
       gap: 40px;
     }
-
+ 
     .detail-item {}
-
+ 
     .detail-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 38px;
@@ -308,7 +308,7 @@
       color: var(--ink);
       line-height: 1;
     }
-
+ 
     .detail-label {
       font-size: 10px;
       letter-spacing: 0.14em;
@@ -316,18 +316,18 @@
       color: var(--stone);
       margin-top: 4px;
     }
-
+ 
     .intro-image {
       position: relative;
     }
-
+ 
     .intro-image img {
       width: 100%;
       height: 540px;
       object-fit: cover;
       display: block;
     }
-
+ 
     .intro-image-caption {
       position: absolute;
       bottom: -20px;
@@ -341,20 +341,20 @@
       max-width: 200px;
       line-height: 1.4;
     }
-
+ 
     /* ─── SERVICES ─── */
     .services {
       background: var(--cream);
       padding: 100px 72px;
     }
-
+ 
     .services-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 64px;
     }
-
+ 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(32px, 3vw, 48px);
@@ -362,19 +362,19 @@
       line-height: 1.1;
       color: var(--ink);
     }
-
+ 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
     }
-
+ 
     .service-card {
       position: relative;
       overflow: hidden;
       cursor: pointer;
     }
-
+ 
     .service-card img {
       width: 100%;
       height: 500px;
@@ -383,19 +383,19 @@
       transition: transform 0.6s ease;
       filter: brightness(0.72);
     }
-
+ 
     .service-card:hover img {
       transform: scale(1.04);
       filter: brightness(0.6);
     }
-
+ 
     .service-card-body {
       position: absolute;
       bottom: 0; left: 0; right: 0;
       padding: 32px 28px;
       background: linear-gradient(to top, rgba(26,25,23,0.85) 0%, transparent 100%);
     }
-
+ 
     .service-card-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px;
@@ -404,7 +404,7 @@
       line-height: 1.2;
       margin-bottom: 8px;
     }
-
+ 
     .service-card-desc {
       font-size: 12px;
       color: rgba(255,255,255,0.65);
@@ -416,12 +416,12 @@
       transform: translateY(8px);
       transition: opacity 0.3s, transform 0.3s;
     }
-
+ 
     .service-card:hover .service-card-desc {
       opacity: 1;
       transform: translateY(0);
     }
-
+ 
     /* Full service list below cards */
     .services-list {
       margin-top: 64px;
@@ -430,17 +430,17 @@
       gap: 0;
       border-top: 1px solid var(--taupe);
     }
-
+ 
     .services-list-item {
       padding: 32px 0 32px 0;
       border-bottom: 1px solid var(--taupe);
       border-right: 1px solid var(--taupe);
       padding-left: 24px;
     }
-
+ 
     .services-list-item:nth-child(4n) { border-right: none; }
     .services-list-item:last-child:nth-child(4n-1) { border-right: none; }
-
+ 
     .service-list-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 20px;
@@ -448,24 +448,24 @@
       color: var(--ink);
       margin-bottom: 6px;
     }
-
+ 
     .service-list-detail {
       font-size: 11px;
       color: var(--stone);
       letter-spacing: 0.04em;
     }
-
+ 
     /* ─── CLIENTS ─── */
     .clients {
       background: var(--warm-white);
       padding: 100px 72px;
     }
-
+ 
     .clients-header {
       text-align: center;
       margin-bottom: 64px;
     }
-
+ 
     .clients-intro {
       font-size: 14px;
       color: var(--stone);
@@ -476,14 +476,14 @@
       margin-right: auto;
       line-height: 1.7;
     }
-
+ 
     .clients-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 0;
       border: 1px solid var(--taupe);
     }
-
+ 
     .client-cell {
       border-right: 1px solid var(--taupe);
       border-bottom: 1px solid var(--taupe);
@@ -494,10 +494,10 @@
       min-height: 100px;
       transition: background 0.2s;
     }
-
+ 
     .client-cell:nth-child(5n) { border-right: none; }
     .client-cell:hover { background: var(--cream); }
-
+ 
     /* placeholder brand name — swap for <img> tags */
     .client-name {
       font-family: 'Cormorant Garamond', serif;
@@ -510,9 +510,9 @@
       font-style: italic;
       transition: color 0.2s;
     }
-
+ 
     .client-cell:hover .client-name { color: var(--ink); }
-
+ 
     .clients-note {
       margin-top: 32px;
       text-align: center;
@@ -521,25 +521,25 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
-
+ 
     /* ─── PROCESS ─── */
     .process {
       background: var(--ink);
       padding: 100px 72px;
       color: var(--cream);
     }
-
+ 
     .process-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 72px;
     }
-
+ 
     .process-header .section-title {
       color: var(--cream);
     }
-
+ 
     .process-header-sub {
       font-size: 13px;
       color: var(--stone);
@@ -548,22 +548,22 @@
       line-height: 1.7;
       text-align: right;
     }
-
+ 
     .process-steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
       border-top: 1px solid rgba(255,255,255,0.1);
     }
-
+ 
     .process-step {
       padding: 48px 32px 48px 0;
       border-right: 1px solid rgba(255,255,255,0.08);
     }
-
+ 
     .process-step:first-child { padding-left: 0; }
     .process-step:last-child { border-right: none; padding-right: 0; }
-
+ 
     .step-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
@@ -572,7 +572,7 @@
       line-height: 1;
       margin-bottom: 28px;
     }
-
+ 
     .step-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 22px;
@@ -580,7 +580,7 @@
       color: var(--cream);
       margin-bottom: 12px;
     }
-
+ 
     .step-body {
       font-size: 12px;
       color: var(--stone);
@@ -588,7 +588,7 @@
       font-weight: 300;
       max-width: 220px;
     }
-
+ 
     /* ─── STUDIO ─── */
     .studio {
       padding: 100px 72px;
@@ -598,31 +598,31 @@
       gap: 80px;
       align-items: center;
     }
-
+ 
     .studio-images {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
     }
-
+ 
     .studio-images img {
       width: 100%;
       object-fit: cover;
       display: block;
     }
-
+ 
     .studio-images img:first-child {
       height: 380px;
       grid-column: 1 / -1;
     }
-
+ 
     .studio-images img:nth-child(2),
     .studio-images img:nth-child(3) {
       height: 200px;
     }
-
+ 
     .studio-text {}
-
+ 
     .studio-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(32px, 3vw, 46px);
@@ -631,7 +631,7 @@
       color: var(--ink);
       margin-bottom: 24px;
     }
-
+ 
     .studio-body {
       font-size: 14px;
       color: var(--stone);
@@ -639,7 +639,7 @@
       font-weight: 300;
       margin-bottom: 16px;
     }
-
+ 
     .studio-address {
       margin-top: 40px;
       padding-top: 32px;
@@ -648,9 +648,9 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-
+ 
     .address-block {}
-
+ 
     .address-label {
       font-size: 9px;
       letter-spacing: 0.22em;
@@ -658,13 +658,13 @@
       color: var(--gold);
       margin-bottom: 8px;
     }
-
+ 
     .address-value {
       font-size: 13px;
       color: var(--ink);
       line-height: 1.6;
     }
-
+ 
     /* ─── BOOKING ─── */
     .booking {
       background: var(--dark);
@@ -674,7 +674,7 @@
       gap: 80px;
       align-items: center;
     }
-
+ 
     .booking-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(36px, 3.5vw, 56px);
@@ -683,11 +683,11 @@
       line-height: 1.1;
       margin-bottom: 20px;
     }
-
+ 
     .booking-headline em {
       font-style: italic;
     }
-
+ 
     .booking-sub {
       font-size: 13px;
       color: var(--stone);
@@ -696,32 +696,32 @@
       margin-bottom: 40px;
       max-width: 360px;
     }
-
+ 
     .booking-form {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
-
+ 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
     }
-
+ 
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 6px;
     }
-
+ 
     .form-group label {
       font-size: 9px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--stone);
     }
-
+ 
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -736,18 +736,18 @@
       transition: border-color 0.2s;
       appearance: none;
     }
-
+ 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
       color: rgba(255,255,255,0.2);
     }
-
+ 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: rgba(255,255,255,0.4);
     }
-
+ 
     .form-group select {
       cursor: pointer;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -756,12 +756,12 @@
       padding-right: 36px;
       color: var(--stone);
     }
-
+ 
     .form-group textarea {
       resize: none;
       height: 90px;
     }
-
+ 
     .form-submit {
       background: var(--cream);
       color: var(--ink);
@@ -777,12 +777,12 @@
       margin-top: 8px;
       transition: background 0.2s, color 0.2s;
     }
-
+ 
     .form-submit:hover {
       background: var(--gold);
       color: white;
     }
-
+ 
     /* ─── FOOTER ─── */
     footer {
       background: var(--ink);
@@ -790,7 +790,7 @@
       color: var(--cream);
       border-top: 1px solid rgba(255,255,255,0.06);
     }
-
+ 
     .footer-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -798,9 +798,9 @@
       padding-bottom: 56px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
+ 
     .footer-brand {}
-
+ 
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 24px;
@@ -812,7 +812,7 @@
       display: block;
       margin-bottom: 16px;
     }
-
+ 
     .footer-tagline {
       font-size: 12px;
       color: var(--stone);
@@ -820,7 +820,7 @@
       font-weight: 300;
       max-width: 260px;
     }
-
+ 
     .footer-col-title {
       font-size: 9px;
       letter-spacing: 0.22em;
@@ -828,14 +828,14 @@
       color: var(--gold);
       margin-bottom: 20px;
     }
-
+ 
     .footer-links {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
-
+ 
     .footer-links a {
       font-size: 13px;
       color: var(--stone);
@@ -843,36 +843,36 @@
       transition: color 0.2s;
       font-weight: 300;
     }
-
+ 
     .footer-links a:hover { color: var(--cream); }
-
+ 
     .footer-bottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding-top: 32px;
     }
-
+ 
     .footer-copy {
       font-size: 11px;
       color: rgba(140,135,128,0.6);
       letter-spacing: 0.04em;
     }
-
+ 
     .footer-legal {
       display: flex;
       gap: 24px;
     }
-
+ 
     .footer-legal a {
       font-size: 11px;
       color: rgba(140,135,128,0.6);
       text-decoration: none;
       transition: color 0.2s;
     }
-
+ 
     .footer-legal a:hover { color: var(--stone); }
-
+ 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
       nav { padding: 0 24px; }
@@ -890,7 +890,7 @@
       .footer { padding: 48px 32px 32px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
     }
-
+ 
     @media (max-width: 600px) {
       .services-list { grid-template-columns: 1fr; }
       .clients-grid { grid-template-columns: repeat(2, 1fr); }
@@ -902,12 +902,12 @@
   </style>
 </head>
 <body>
-
+ 
   <!-- ─── NAV ─── -->
   <nav>
     <a href="#" class="nav-logo">
-      Atelier
-      <span>Alteration Specialists · London</span>
+      Altbes
+      <span>Alteration &amp; Bespoke · London</span>
     </a>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -917,13 +917,13 @@
     </ul>
     <a href="#book" class="nav-cta">Book Appointment</a>
   </nav>
-
-
+ 
+ 
   <!-- ─── HERO ─── -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Est. 2018 · Marylebone, London</p>
+      <p class="hero-eyebrow">Alteration &amp; Bespoke · Pimlico, London</p>
       <h1 class="hero-headline">Precision <em>tailoring</em><br>for the clothes<br>you love most.</h1>
       <p class="hero-sub">Expert alterations and repairs, made to last. Whether it's a perfect hem or a full transformation, we fit your garment to you — not the other way around.</p>
       <div class="hero-actions">
@@ -932,8 +932,8 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ─── PRESS BAR ─── -->
   <div class="press-bar">
     <span class="press-label">As Seen In</span>
@@ -948,8 +948,8 @@
       <span class="press-logo">Wallpaper*</span>
     </div>
   </div>
-
-
+ 
+ 
   <!-- ─── INTRO ─── -->
   <section class="intro">
     <div class="intro-text">
@@ -977,8 +977,8 @@
       <div class="intro-image-caption">"The only studio I trust with my archive pieces."</div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ─── SERVICES ─── -->
   <section class="services" id="services">
     <div class="services-header">
@@ -988,7 +988,7 @@
       </div>
       <a href="#book" class="btn-primary">Request a Consultation</a>
     </div>
-
+ 
     <!-- Featured 3-up cards -->
     <div class="services-grid">
       <div class="service-card">
@@ -1013,7 +1013,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Service list -->
     <div class="services-list">
       <div class="services-list-item">
@@ -1050,8 +1050,8 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ─── CLIENTS ─── -->
   <section class="clients" id="clients">
     <div class="clients-header">
@@ -1059,7 +1059,7 @@
       <h2 class="section-title">Brands &amp; Clients</h2>
       <p class="clients-intro">We work with leading fashion houses, stylists, and private clients across London — trusted with garments that demand the very highest standard of care.</p>
     </div>
-
+ 
     <!--
       CLIENT LOGO GRID
       To add your own logos: replace the <span class="client-name">...</span>
@@ -1080,8 +1080,8 @@
     </div>
     <p class="clients-note">Replace placeholders with your brand logos — swap &lt;span&gt; for &lt;img&gt; tags in each cell</p>
   </section>
-
-
+ 
+ 
   <!-- ─── PROCESS ─── -->
   <section class="process">
     <div class="process-header">
@@ -1114,8 +1114,8 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ─── STUDIO ─── -->
   <section class="studio" id="studio">
     <div class="studio-images">
@@ -1148,8 +1148,8 @@
       </div>
     </div>
   </section>
-
-
+ 
+ 
   <!-- ─── BOOKING ─── -->
   <section class="booking" id="book">
     <div>
@@ -1167,7 +1167,7 @@
         </div>
       </div>
     </div>
-
+ 
     <form class="booking-form" onsubmit="return false;">
       <div class="form-row">
         <div class="form-group">
@@ -1204,8 +1204,8 @@
       <button type="submit" class="form-submit">Request Appointment →</button>
     </form>
   </section>
-
-
+ 
+ 
   <!-- ─── FOOTER ─── -->
   <footer>
     <div class="footer-top">
@@ -1250,6 +1250,6 @@
       </div>
     </div>
   </footer>
-
+ 
 </body>
-</html>
+</html> 
