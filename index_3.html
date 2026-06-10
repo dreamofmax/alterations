@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altbes — Alteration & Bespoke, London</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Neue+Haas+Grotesk+Display+Pro:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0A0A0A;
+      --white: #FFFFFF;
+      --off-white: #F5F5F5;
+      --mid: #888888;
+      --light-border: #E0E0E0;
+      --dark-border: #1F1F1F;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      background: var(--black);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--white);
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-cta:hover { background: var(--off-white); }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      min-height: 640px;
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 64px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.65) contrast(1.1);
+    }
+
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 120px;
+      background: linear-gradient(to right, var(--black), transparent);
+    }
+
+    .hero-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 32px;
+    }
+
+    .hero-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(44px, 5vw, 72px);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+    }
+
+    .hero-headline strong {
+      font-weight: 600;
+      display: block;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-white:hover { background: var(--off-white); }
+
+    .btn-outline-white {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.6);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-outline-white:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: var(--white);
+    }
+
+    /* PRESS BAR / MARQUEE */
+    .press-bar {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--light-border);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .press-bar-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 0 28px 0 40px;
+      border-right: 1px solid var(--light-border);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      background: var(--off-white);
+    }
+
+    .marquee-track {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    /* fade masks */
+    .marquee-track::before,
+    .marquee-track::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .marquee-track::before {
+      left: 0;
+      background: linear-gradient(to right, var(--off-white), transparent);
+    }
+    .marquee-track::after {
+      right: 0;
+      background: linear-gradient(to left, var(--off-white), transparent);
+    }
+
+    .marquee-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      animation: marquee 28s linear infinite;
+      white-space: nowrap;
+      will-change: transform;
+    }
+
+    .marquee-track:hover .marquee-inner {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .press-logo {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 40px;
+      height: 56px;
+      border-right: 1px solid var(--light-border);
+      flex-shrink: 0;
+    }
+
+    /* text fallback — remove when using real <img> logos */
+    .press-logo span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(10,10,10,0.28);
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    /* real logo images — uncomment opacity/filter when using actual files */
+    .press-logo img {
+      height: 18px;
+      width: auto;
+      display: block;
+      opacity: 0.35;
+      filter: grayscale(100%);
+      transition: opacity 0.2s;
+    }
+
+    .marquee-track:hover .press-logo img { opacity: 0.7; }
+    .marquee-track:hover .press-logo span { color: rgba(10,10,10,0.6); }
+
+    /* SECTION PRIMITIVES */
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(30px, 3vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--black);
+    }
+
+    .section-title strong { font-weight: 600; }
+
+    /* INTRO */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .intro-left {
+      padding: 96px 64px;
+      border-right: 1px solid var(--light-border);
+    }
+
+    .intro-body {
+      font-size: 14px;
+      color: var(--mid);
+      font-weight: 400;
+      line-height: 1.8;
+      max-width: 380px;
+      margin-top: 24px;
+    }
+
+    .intro-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: 56px;
+      border-top: 1px solid var(--light-border);
+    }
+
+    .stat {
+      padding: 28px 0;
+      border-right: 1px solid var(--light-border);
+      padding-right: 24px;
+      margin-right: 24px;
+    }
+    .stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+
+    .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-top: 4px;
+    }
+
+    .intro-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(1.1);
+    }
+
+    /* SERVICES */
+    .services {
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .services-header {
+      padding: 64px 64px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+
+    .btn-black {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.15s;
+    }
+    .btn-black:hover { background: #1a1a1a; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--light-border);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid var(--light-border);
+      cursor: pointer;
+    }
+    .service-card:last-child { border-right: none; }
+
+    .service-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(1.05);
+      transition: transform 0.5s ease, filter 0.3s;
+    }
+    .service-card:hover img {
+      transform: scale(1.03);
+      filter: grayscale(100%) contrast(1.15) brightness(0.8);
+    }
+
+    .service-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 28px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    }
+
+    .service-card-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card-hint {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 4px;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+    .service-card:hover .service-card-hint { opacity: 1; transform: translateY(0); }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--light-border);
+    }
+
+    .svc-item {
+      padding: 28px 32px;
+      border-right: 1px solid var(--light-border);
+      border-bottom: 1px solid var(--light-border);
+    }
+    .svc-item:nth-child(4n) { border-right: none; }
+    .svc-item:nth-last-child(-n+4):nth-child(4n+1),
+    .svc-item:nth-last-child(-n+3):nth-child(4n+2),
+    .svc-item:nth-last-child(-n+2):nth-child(4n+3),
+    .svc-item:last-child { border-bottom: none; }
+
+    .svc-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--black);
+    }
+    .svc-price {
+      font-size: 11px;
+      color: var(--mid);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* CLIENTS */
+    .clients {
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .clients-header {
+      padding: 80px 64px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .clients-subtext {
+      font-size: 13px;
+      color: var(--mid);
+      max-width: 300px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--light-border);
+    }
+
+    .client-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      border-right: 1px solid var(--light-border);
+      border-bottom: 1px solid var(--light-border);
+      min-height: 96px;
+      transition: background 0.15s;
+      cursor: default;
+    }
+    .client-cell:nth-child(5n) { border-right: none; }
+    .client-cell:hover { background: var(--off-white); }
+
+    .client-placeholder {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(10,10,10,0.2);
+      text-align: center;
+      transition: color 0.15s;
+      font-style: italic;
+    }
+    .client-cell:hover .client-placeholder { color: rgba(10,10,10,0.5); }
+
+    .clients-note {
+      padding: 16px 64px;
+      font-size: 11px;
+      color: var(--mid);
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--light-border);
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--black);
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .process-header {
+      padding: 80px 64px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .process-header .section-title { color: var(--white); }
+
+    .process-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      max-width: 280px;
+      line-height: 1.7;
+      text-align: right;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .process-step {
+      padding: 48px 40px 48px 40px;
+      border-right: 1px solid var(--dark-border);
+    }
+    .process-step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 40px;
+    }
+
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-body {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.75;
+      max-width: 200px;
+    }
+
+    /* FIND US */
+    .find-us {
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .find-us-info {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .find-us-col {
+      padding: 64px 40px;
+      border-right: 1px solid var(--light-border);
+    }
+    .find-us-col:first-child { padding-left: 64px; }
+    .find-us-col:last-child { border-right: none; }
+
+    .info-label {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 12px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      color: var(--black);
+      line-height: 1.7;
+    }
+
+    .info-value a {
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--light-border);
+      transition: border-color 0.15s;
+    }
+    .info-value a:hover { border-color: var(--black); }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--light-border);
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { color: var(--black); }
+    .hours-time { color: var(--mid); font-size: 12px; }
+
+    .directions-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 2px;
+      transition: opacity 0.15s;
+    }
+    .directions-link:hover { opacity: 0.5; }
+
+    .map-container {
+      width: 100%;
+      height: 440px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: grayscale(100%) contrast(1.1);
+    }
+
+    /* BOOKING */
+    .booking {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--light-border);
+    }
+
+    .booking-left {
+      padding: 96px 64px;
+      border-right: 1px solid var(--light-border);
+      background: var(--black);
+    }
+
+    .booking-left .section-title { color: var(--white); }
+    .booking-left .eyebrow { color: rgba(255,255,255,0.3); }
+
+    .booking-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.75;
+      max-width: 340px;
+      margin-top: 20px;
+    }
+
+    .booking-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-top: 56px;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .meta-item {
+      padding: 28px 0;
+      border-right: 1px solid var(--dark-border);
+      padding-right: 28px;
+      margin-right: 28px;
+    }
+    .meta-item:last-child { border-right: none; margin-right: 0; }
+
+    .meta-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--white);
+    }
+    .meta-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+
+    .booking-right {
+      padding: 96px 64px;
+      background: var(--off-white);
+    }
+
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group label {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--white);
+      border: 1px solid var(--light-border);
+      color: var(--black);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+      appearance: none;
+      border-radius: 0;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(10,10,10,0.25); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--black); }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 32px;
+      cursor: pointer;
+      color: rgba(10,10,10,0.6);
+    }
+
+    .form-group textarea { resize: none; height: 88px; }
+
+    .form-submit {
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 8px;
+      transition: background 0.15s;
+    }
+    .form-submit:hover { background: #1a1a1a; }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 64px 64px 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--dark-border);
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+
+    .footer-col-title {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 20px;
+    }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+    }
+
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.04em; }
+
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: 11px; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.15s; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 0 32px 72px; justify-content: flex-end; min-height: 100vh; }
+      .intro, .booking { grid-template-columns: 1fr; }
+      .intro-left { border-right: none; border-bottom: 1px solid var(--light-border); padding: 64px 32px; }
+      .intro-right { height: 360px; }
+      .services-header { padding: 48px 32px 0; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none; border-bottom: 1px solid var(--dark-border); }
+      .service-card:last-child { border-bottom: none; }
+      .service-card img { height: 300px; }
+      .services-list { grid-template-columns: 1fr 1fr; }
+      .clients-header { padding: 64px 32px 40px; flex-direction: column; align-items: flex-start; gap: 16px; }
+      .clients-subtext { text-align: left; }
+      .clients-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-header { padding: 64px 32px 48px; flex-direction: column; align-items: flex-start; gap: 20px; }
+      .process-sub { text-align: left; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .find-us-info { grid-template-columns: 1fr 1fr; }
+      .find-us-col:first-child { grid-column: 1 / -1; }
+      .find-us-col { padding: 40px 32px; }
+      .find-us-col:first-child { padding-left: 32px; }
+      .booking-left { padding: 64px 32px; border-right: none; border-bottom: 1px solid var(--dark-border); }
+      .booking-right { padding: 64px 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+      footer { padding: 48px 32px 32px; }
+    }
+
+    @media (max-width: 600px) {
+      .services-list, .process-steps { grid-template-columns: 1fr; }
+      .clients-grid { grid-template-columns: repeat(2, 1fr); }
+      .find-us-info { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Altbes</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#find-us">Find Us</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+    <a href="#book" class="nav-cta">Book Appointment</a>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Alteration & Bespoke · Pimlico, London</p>
+      <h1 class="hero-headline">
+        The clothes<br>
+        you love.<br>
+        <strong>Fitted right.</strong>
+      </h1>
+      <div class="hero-actions">
+        <a href="#book" class="btn-white">Book an Appointment</a>
+        <a href="#services" class="btn-outline-white">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85" alt="Altbes studio" />
+    </div>
+  </section>
+
+
+  <!-- PRESS BAR -->
+  <!-- PRESS BAR — auto-scrolling marquee -->
+  <div class="press-bar">
+    <div class="press-bar-label">As Seen In</div>
+    <div class="marquee-track">
+      <div class="marquee-inner" aria-hidden="true">
+
+        <!-- SET 1 — replace <span> with <img src="logo.svg" alt="Publication"> when you have files -->
+        <div class="press-logo"><span>Vogue</span></div>
+        <div class="press-logo"><span>Harper's Bazaar</span></div>
+        <div class="press-logo"><span>The Times</span></div>
+        <div class="press-logo"><span>Financial Times</span></div>
+        <div class="press-logo"><span>Tatler</span></div>
+        <div class="press-logo"><span>Wallpaper*</span></div>
+        <div class="press-logo"><span>ES Magazine</span></div>
+        <div class="press-logo"><span>Sunday Times Style</span></div>
+
+        <!-- SET 2 — exact duplicate for seamless loop -->
+        <div class="press-logo"><span>Vogue</span></div>
+        <div class="press-logo"><span>Harper's Bazaar</span></div>
+        <div class="press-logo"><span>The Times</span></div>
+        <div class="press-logo"><span>Financial Times</span></div>
+        <div class="press-logo"><span>Tatler</span></div>
+        <div class="press-logo"><span>Wallpaper*</span></div>
+        <div class="press-logo"><span>ES Magazine</span></div>
+        <div class="press-logo"><span>Sunday Times Style</span></div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro-left">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">Precision work.<br><strong>Every piece.</strong></h2>
+      <p class="intro-body">We work with everything from couture archive pieces to contemporary ready-to-wear. Standard alterations, bridal, repairs, re-linings — brought to the same level of quiet obsession regardless of complexity.</p>
+      <p class="intro-body" style="margin-top: 12px;">Based in Pimlico. Trusted by London's leading fashion houses and private clients.</p>
+      <div class="intro-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2,000+</div>
+          <div class="stat-label">Pieces per year</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Customer rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="intro-right">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85" alt="Tailor at work" />
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title">What we do</h2>
+      </div>
+      <a href="#book" class="btn-black">Book a Consultation</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1532453288672-3a17ac36f5df?w=800&q=80" alt="Standard alterations" />
+        <div class="service-card-body">
+          <div class="service-card-name">Standard Alterations</div>
+          <div class="service-card-hint">Hems · Taking in · Letting out</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4f2195?w=800&q=80" alt="Bridal" />
+        <div class="service-card-body">
+          <div class="service-card-name">Bridal & Occasion</div>
+          <div class="service-card-hint">Gowns · Evening wear · One-off pieces</div>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1623059091829-2cebf3c03b10?w=800&q=80" alt="Repairs" />
+        <div class="service-card-body">
+          <div class="service-card-name">Repairs & Restoration</div>
+          <div class="service-card-hint">Invisible mending · Re-lining · Restoration</div>
+        </div>
+      </div>
+    </div>
+    <div class="services-list">
+      <div class="svc-item"><div class="svc-name">Trouser Hemming</div><div class="svc-price">From £18</div></div>
+      <div class="svc-item"><div class="svc-name">Jacket Waist Suppression</div><div class="svc-price">From £55</div></div>
+      <div class="svc-item"><div class="svc-name">Dress Taking In / Out</div><div class="svc-price">From £35</div></div>
+      <div class="svc-item"><div class="svc-name">Invisible Mending</div><div class="svc-price">Quoted per piece</div></div>
+      <div class="svc-item"><div class="svc-name">Coat Re-lining</div><div class="svc-price">From £120</div></div>
+      <div class="svc-item"><div class="svc-name">Zip Replacement</div><div class="svc-price">From £28</div></div>
+      <div class="svc-item"><div class="svc-name">Wedding Dress Fitting</div><div class="svc-price">Quoted per piece</div></div>
+      <div class="svc-item"><div class="svc-name">Leather & Suede Repairs</div><div class="svc-price">Quoted per piece</div></div>
+    </div>
+  </section>
+
+
+  <!-- CLIENTS -->
+  <section class="clients" id="clients">
+    <div class="clients-header">
+      <div>
+        <p class="eyebrow">Trusted By</p>
+        <h2 class="section-title">Brands &amp; Clients</h2>
+      </div>
+      <p class="clients-subtext">Trusted with garments from London's leading fashion houses, stylists, and private wardrobes.</p>
+    </div>
+    <div class="clients-grid">
+      <div class="client-cell"><span class="client-placeholder">Brand One</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Two</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Three</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Four</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Five</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Six</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Seven</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Eight</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Nine</span></div>
+      <div class="client-cell"><span class="client-placeholder">Brand Ten</span></div>
+    </div>
+    <p class="clients-note">Replace each placeholder span with an &lt;img&gt; tag pointing to your logo file</p>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process-header">
+      <div>
+        <p class="eyebrow" style="color: rgba(255,255,255,0.25);">How It Works</p>
+        <h2 class="section-title" style="color: var(--white);">Simple from<br><strong>start to finish.</strong></h2>
+      </div>
+      <p class="process-sub">We've made the process as seamless as possible — hand over your garment with confidence.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-title">Book</div>
+        <div class="step-body">Request an appointment online or by phone. We'll confirm within a few hours.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-title">Fitting</div>
+        <div class="step-body">Bring your garments in. We take measurements and discuss every detail together.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-title">Alteration</div>
+        <div class="step-body">Our tailors carry out the work with precision. Typically 3–7 days turnaround.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <div class="step-title">Collect</div>
+        <div class="step-body">Final check fitting. Collect your garments and wear them as they were meant to be.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FIND US -->
+  <section class="find-us" id="find-us">
+    <div class="find-us-info">
+      <div class="find-us-col">
+        <p class="eyebrow">Find Us</p>
+        <h2 class="section-title" style="font-size: clamp(24px, 2.5vw, 36px);">37 Moreton Street,<br><strong>Pimlico.</strong></h2>
+        <a href="https://maps.google.com/?q=37+Moreton+Street+London+SW1V+2NY" target="_blank" class="directions-link">Get Directions →</a>
+      </div>
+      <div class="find-us-col">
+        <p class="info-label">Address</p>
+        <div class="info-value">
+          37 Moreton Street<br>Pimlico<br>London SW1V 2NY
+        </div>
+        <div style="margin-top: 24px;">
+          <p class="info-label">Nearest Tube</p>
+          <div class="info-value">Pimlico (Victoria line)<br>Victoria (5 min walk)</div>
+        </div>
+      </div>
+      <div class="find-us-col">
+        <p class="info-label">Opening Hours</p>
+        <div class="hours-row"><span class="hours-day">Mon – Fri</span><span class="hours-time">9am – 7pm</span></div>
+        <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">12pm – 6pm</span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">12pm – 5pm</span></div>
+      </div>
+      <div class="find-us-col">
+        <p class="info-label">Contact</p>
+        <div class="info-value" style="margin-bottom: 20px;">
+          <a href="tel:07985575350">07985 575350</a>
+        </div>
+        <p class="info-label">Email</p>
+        <div class="info-value">
+          <a href="mailto:info@altbes.com">info@altbes.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.0!2d-0.1368!3d51.4908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876051c8c2e86d7%3A0x3e2ab1dbd0427ed4!2s37%20Moreton%20St%2C%20London%20SW1V%202NY!5e0!3m2!1sen!2suk!4v1699999999999!5m2!1sen!2suk"
+        title="Altbes — 37 Moreton Street London SW1V 2NY"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+
+  <!-- BOOKING -->
+  <section class="booking" id="book">
+    <div class="booking-left">
+      <p class="eyebrow">Appointments</p>
+      <h2 class="section-title">Ready for the<br><strong>perfect fit?</strong></h2>
+      <p class="booking-sub">Send your details and we'll confirm your appointment within a few hours. All consultations by appointment only.</p>
+      <div class="booking-meta">
+        <div class="meta-item">
+          <div class="meta-num">3–7</div>
+          <div class="meta-label">Day turnaround</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-num">Free</div>
+          <div class="meta-label">First consultation</div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-right">
+      <form class="form-grid" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Jane Smith" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="jane@email.com" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="07XXX XXXXXX" />
+          </div>
+          <div class="form-group">
+            <label for="service">Service</label>
+            <select id="service">
+              <option value="" disabled selected>Select a service</option>
+              <option>Standard Alterations</option>
+              <option>Bridal & Occasion</option>
+              <option>Repairs & Restoration</option>
+              <option>Re-lining</option>
+              <option>Leather & Suede</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Garment</label>
+          <textarea id="message" placeholder="A few details help us prepare for your visit."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Request Appointment →</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <a href="#" class="footer-logo">Altbes</a>
+        <p class="footer-tagline">Alteration & Bespoke specialists in Pimlico, London. Expert tailoring, repairs, and restoration.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Services</p>
+        <ul class="footer-links">
+          <li><a href="#services">Standard Alterations</a></li>
+          <li><a href="#services">Bridal & Occasion</a></li>
+          <li><a href="#services">Repairs & Restoration</a></li>
+          <li><a href="#services">Re-lining</a></li>
+          <li><a href="#services">Leather & Suede</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Studio</p>
+        <ul class="footer-links">
+          <li><a href="#find-us">Location & Hours</a></li>
+          <li><a href="#clients">Our Clients</a></li>
+          <li><a href="#book">Book Appointment</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="tel:07985575350">07985 575350</a></li>
+          <li><a href="mailto:info@altbes.com">info@altbes.com</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Google Reviews</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Altbes. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
